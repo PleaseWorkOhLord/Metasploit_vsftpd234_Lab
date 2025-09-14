@@ -12,7 +12,7 @@ excel_file = 'metasploit_lab_instances.xlsx'
 with open(output_file, 'r') as file:
     terraform_output = file.read()
 
-pattern = r'(\w+)\s*:\s*{\s*no-op\s*kali_name\s*:\s*"([^"]+)"\s*no-op\s*kali_pub_ip\s*:\s*"([^"]+)"\s*no-op\s*target_name\s*:\s*"([^"]+)"\s*no-op\s*target_pri_ip\s*:\s*"([^"]+)"'
+pattern = r'([\w\.-]+@[\w\.-]+)\s*:\s*{\s*no-op\s*kali_name\s*:\s*"([^"]+)"\s*no-op\s*kali_pub_ip\s*:\s*"([^"]+)"\s*no-op\s*target_name\s*:\s*"([^"]+)"\s*no-op\s*target_pri_ip\s*:\s*"([^"]+)"'
 matches = re.findall(pattern, terraform_output)
 
 df = pd.DataFrame(matches, columns=table_columns)
