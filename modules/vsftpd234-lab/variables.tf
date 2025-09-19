@@ -16,7 +16,7 @@ variable "route_table_id" {
 
 variable "instance_type" {
   description = "Type of EC2 instance to provision"
-  default     = "t2.medium"
+  default     = "t2.micro"
 }
 
 variable "availability_zone" {
@@ -134,4 +134,5 @@ variable "target_setup_script" {
 
     echo "NEVER GONNA GIVE YOU UP" > /home/ubuntu/FAST/flag.txt
     EOT
+
 }
